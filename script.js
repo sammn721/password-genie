@@ -18,9 +18,12 @@ function generatePassword() {
     var userUp = confirm("Would you like to add uppercase letters?");
     var userLo = confirm("Would you like to add lowercase letters?");
     var userNum = confirm("Would you like to add numbers?");
-    var userSpe = mconfirm("Would you like to add special characters?");
-    alert("k thx.");
-
+    var userSpe = confirm("Would you like to add special characters?");
+    
+    if( !userUp && !userLo && !userNum && !userSpe ) {
+    alert("Please select at least one type of character.");
+    return "";
+    }
   } else {
 
     alert("Password must be between 8 and 128 characters.");
