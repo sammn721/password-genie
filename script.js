@@ -8,7 +8,9 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specials = ["`","~","!","@","#","$","%","^","&","*","(",")","-","=","[","]","\\",";","'",",",".","/","_","+","{","}","|",":","\"","<",">","?"];
 var userChars = [];
 
+
 function generatePassword() {
+  var newPassword = "";
 // Ask user password length and store answer in variable `pwLength`
   var pwLength = prompt("How many characters would you like your password to be?");
 
@@ -37,8 +39,9 @@ function generatePassword() {
     // Random selection of type per character
     for ( i = 0; i < pwLength; i++) {
       var charType = userChars[Math.floor(Math.random()*userChars.length)];
-      randomChar = charType[Math.floor(Math.random()*charType.length)];
-      
+      var randomChar = charType[Math.floor(Math.random()*charType.length)];
+      newPassword += randomChar;
+      console.log(newPassword);
     }
     // Must choose at least one type
     if( !userUpper && !userLower && !userNumber && !userSpecial ) {
@@ -50,6 +53,7 @@ function generatePassword() {
     alert("Password must be between 8 and 128 characters.");
     return "";
   }
+  password = newPassword;
   return password;
 }
 
