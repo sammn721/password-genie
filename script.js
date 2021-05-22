@@ -37,6 +37,8 @@ function generatePassword() {
     // Random selection of type per character
     for ( i = 0; i < pwLength; i++) {
       var charType = userChars[Math.floor(Math.random()*userChars.length)];
+      randomChar = charType[Math.floor(Math.random()*charType.length)];
+      
     }
     // Must choose at least one type
     if( !userUpper && !userLower && !userNumber && !userSpecial ) {
