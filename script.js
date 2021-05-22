@@ -37,22 +37,23 @@ function generatePassword() {
     if( userSpecial ) {
       userChars.push(specials);
     }
+    // Must choose at least one type
+    if( !userUpper && !userLower && !userNumber && !userSpecial ) {
+      alert("Please select at least one type of character.");
+      return "";
+      }
+    } else {
+      // Must choose valid length
+      alert("Password must be between 8 and 128 characters.");
+      return "";
+    }
     // Random selection of type per character
     for ( i = 0; i < pwLength; i++) {
       var charType = userChars[Math.floor(Math.random()*userChars.length)];
       var randomChar = charType[Math.floor(Math.random()*charType.length)];
       newPassword += randomChar;
     }
-    // Must choose at least one type
-    if( !userUpper && !userLower && !userNumber && !userSpecial ) {
-    alert("Please select at least one type of character.");
-    return "";
-    }
-  } else {
-    // Must choose valid length
-    alert("Password must be between 8 and 128 characters.");
-    return "";
-  }
+
   password = newPassword;
   return password;
 }
