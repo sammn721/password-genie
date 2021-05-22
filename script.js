@@ -6,10 +6,11 @@ var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specials = ["`","~","!","@","#","$","%","^","&","*","(",")","-","=","[","]","\\",";","'",",",".","/","_","+","{","}","|",":","\"","<",">","?"];
-var userChars = [];
+
 
 
 function generatePassword() {
+  var userChars = [];
   var newPassword = "";
 // Ask user password length and store answer in variable `pwLength`
   var pwLength = prompt("How many characters would you like your password to be?");
@@ -41,7 +42,6 @@ function generatePassword() {
       var charType = userChars[Math.floor(Math.random()*userChars.length)];
       var randomChar = charType[Math.floor(Math.random()*charType.length)];
       newPassword += randomChar;
-      console.log(newPassword);
     }
     // Must choose at least one type
     if( !userUpper && !userLower && !userNumber && !userSpecial ) {
