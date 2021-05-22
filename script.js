@@ -16,29 +16,35 @@ function generatePassword() {
   pwLength = parseInt(pwLength);
   if (pwLength >= 8 && pwLength <= 128) {
     // Ask which character sets to include
-    var userUp = confirm("Would you like to add uppercase letters?");
-    var userLo = confirm("Would you like to add lowercase letters?");
-    var userNum = confirm("Would you like to add numbers?");
-    var userSpe = confirm("Would you like to add special characters?");
+    var userUpper = confirm("Would you like to add uppercase letters?");
+    var userLower = confirm("Would you like to add lowercase letters?");
+    var userNumber = confirm("Would you like to add numbers?");
+    var userSpecial = confirm("Would you like to add special characters?");
     
-    if( userUp ) {
+    // character type conditionals
+    if( userUpper ) {
       userChars.push(uppercase);
     }
-    if( userLo ) {
+    if( userLower ) {
       userChars.push(lowercase);
     }
-    if( userNum ) {
+    if( userNumber ) {
       userChars.push(numbers);
     }
-    if( userSpe ) {
+    if( userSpecial ) {
       userChars.push(specials);
     }
-
-    if( !userUp && !userLo && !userNum && !userSpe ) {
+    // Random selection of type per character
+    for ( i = 0; i < pwLength; i++) {
+      var charType = userChars[Math.floor(Math.random()*userChars.length)];
+    }
+    // Must choose at least one type
+    if( !userUpper && !userLower && !userNumber && !userSpecial ) {
     alert("Please select at least one type of character.");
     return "";
     }
   } else {
+    // Must choose valid length
     alert("Password must be between 8 and 128 characters.");
     return "";
   }
