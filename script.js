@@ -15,18 +15,16 @@ function generatePassword() {
 // Validate answer for length requirement
   if (pwLength >= 8 && pwLength <= 128) {
     // Ask which character sets to include
-    if(confirm("Would you like to add uppercase letters?")) {
-      
-    }
-    confirm("Would you like to add lowercase letters?");
-    confirm("Would you like to add numbers?");
-    confirm("Would you like to add special characters?");
+    var userUp = confirm("Would you like to add uppercase letters?");
+    var userLo = confirm("Would you like to add lowercase letters?");
+    var userNum = confirm("Would you like to add numbers?");
+    var userSpe = mconfirm("Would you like to add special characters?");
     alert("k thx.");
 
   } else {
 
     alert("Password must be between 8 and 128 characters.");
-    generatePassword();
+    return "";
 
   }
   return password;
