@@ -19,3 +19,4 @@ A password generator
 -Each character is chosen by first randomly selecting which of the four character types to pull from. Then a character is chosen from that array, and added to the user's password. This function iterates until the password reaches the desired length.<br>
 -The password will then display onscreen, until the user attempts to generate another password.<br>
 https://sammn721.github.io/password-genie/<br>
+![alt text](assets/pw-genie.png)
