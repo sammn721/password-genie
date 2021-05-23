@@ -10,10 +10,11 @@ var specials = ["`","~","!","@","#","$","%","^","&","*","(",")","-","=","[","]",
 
 
 function generatePassword() {
+  // Variables to be reset by clicking button
   var userChars = [];
   var newPassword = "";
 // Ask user password length and store answer in variable `pwLength`
-  var pwLength = prompt("How many characters would you like your password to be?");
+  var pwLength = prompt("How many characters would you like your password to be?", "Min: 8 / Max: 128");
 
 // Validate answer for length requirement
   pwLength = parseInt(pwLength);
@@ -25,20 +26,20 @@ function generatePassword() {
     var userSpecial = confirm("Would you like to add special characters?");
     
     // character type conditionals
-    if( userUpper ) {
+    if (userUpper) {
       userChars.push(uppercase);
     }
-    if( userLower ) {
+    if (userLower) {
       userChars.push(lowercase);
     }
-    if( userNumber ) {
+    if (userNumber) {
       userChars.push(numbers);
     }
-    if( userSpecial ) {
+    if (userSpecial) {
       userChars.push(specials);
     }
     // Must choose at least one type
-    if( !userUpper && !userLower && !userNumber && !userSpecial ) {
+    if (!userUpper && !userLower && !userNumber && !userSpecial) {
       alert("Please select at least one type of character.");
       return "";
       }
@@ -70,6 +71,3 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// Subsequent clicks erase and generate new password
