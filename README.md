@@ -17,6 +17,6 @@ A password generator
 -The subsequent four popups will confirm if the user would like their password to include uppercase letters, lowercase letters, numbers, and/or special characters, respectively. Failure to confirm at least one of these options will alert the user before closing.<br>
 -After answering all popups, a password will be generated for the user based on their selections.<br>
 -Each character is chosen by first randomly selecting which of the four character types to pull from. Then a character is chosen from that array, and added to the user's password. This function iterates until the password reaches the desired length.<br>
--The password will then display onscreen, until the user attempts to generate another password.<br>
+-The generated password will then display onscreen, until the user attempts to generate another password.<br>
 https://sammn721.github.io/password-genie/<br>
 ![alt text](assets/pw-genie.png)
